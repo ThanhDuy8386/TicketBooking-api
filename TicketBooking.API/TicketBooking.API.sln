@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketBooking.API", "TicketBooking.API.csproj", "{F6078E38-E811-4C82-B98B-41B41830589D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketBooking.API", "TicketBooking.API.csproj", "{F6078E38-E811-4C82-B98B-41B41830589D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketBooking.Repositories", "..\TicketBooking.Repositories\TicketBooking.Repositories.csproj", "{0B30669C-5AD6-4E83-9207-1E2A19996BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketBooking.DALs", "..\TicketBooking.DALs\TicketBooking.DALs.csproj", "{A72A6916-87F6-42C2-A9E9-2480CE3972EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F6078E38-E811-4C82-B98B-41B41830589D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6078E38-E811-4C82-B98B-41B41830589D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6078E38-E811-4C82-B98B-41B41830589D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B30669C-5AD6-4E83-9207-1E2A19996BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B30669C-5AD6-4E83-9207-1E2A19996BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B30669C-5AD6-4E83-9207-1E2A19996BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B30669C-5AD6-4E83-9207-1E2A19996BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A72A6916-87F6-42C2-A9E9-2480CE3972EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72A6916-87F6-42C2-A9E9-2480CE3972EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72A6916-87F6-42C2-A9E9-2480CE3972EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72A6916-87F6-42C2-A9E9-2480CE3972EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
