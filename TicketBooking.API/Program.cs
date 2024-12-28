@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using TicketBooking.DALs;
 
 namespace TicketBooking.API
 {
@@ -13,6 +15,12 @@ namespace TicketBooking.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //link to database
+            builder.Services.AddDbContext<TicketBookingContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+                b => b.MigrationsAssembly("TicketBooking.API")
+            ));
 
             var app = builder.Build();
 
