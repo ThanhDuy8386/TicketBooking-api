@@ -12,7 +12,6 @@ namespace TicketBooking.Repositories.IRepositories
         void Delete(int id);
         List<T> GetAll();
         T GetById(int id);
-        T Update(string id, T entity);
-
+        void Update(string id, T entity);
     }
 }

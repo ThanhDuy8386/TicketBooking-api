@@ -3,35 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketBooking.DALs;
 using TicketBooking.Repositories.IRepositories;
 
 namespace TicketBooking.Repositories.Repositories
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
+        public readonly TicketBookingContext _context;
+        public BaseRepository(TicketBookingContext context)
+        {
+            _context = context;
+        }
         public void Create(T entity)
         {
-            
+            _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = _context.Find<T>(id);
+            if (entity != null)
+            {
+                _context.Set<T>().Remove(entity);
+                _context.SaveChanges();
+            }
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Find(id);
         }
 
-        public T Update(string id, T entity)
+        public void Update(string id, T entity)
         {
-            throw new NotImplementedException();
+            var currentEntity = _context.Find<T>(id);
+            if (currentEntity != null) { 
+                _context.Entry(currentEntity).CurrentValues.SetValues(entity);
+                _context.SaveChanges();
+            }
         }
     }
 }
